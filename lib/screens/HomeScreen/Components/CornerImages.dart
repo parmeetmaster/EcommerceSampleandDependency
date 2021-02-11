@@ -2,6 +2,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:model_architecture/constantPackage/constColors.dart';
+import 'package:model_architecture/model/DetailScreenModel.dart';
+import '../../DetailScreen/DetailScreen.dart';
+import 'package:model_architecture/utils/uuidUtils.dart';
 
 class RoundedCornerImages extends StatelessWidget {
 
@@ -16,6 +19,8 @@ class RoundedCornerImages extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    DetailScreenModel model=new DetailScreenModel(imgUrl: imageurl,tag: UUIdUtils().getInstance().getV4Uuid());
+
     return  Container(
       width: 188,
       height: 300,
@@ -27,8 +32,17 @@ class RoundedCornerImages extends StatelessWidget {
             width: 180,
             child: ClipRRect(
                  borderRadius: BorderRadius.circular(20),
-              child: Image.network(imageurl,
-               fit: BoxFit.cover,
+              child: GestureDetector(
+              onTap: (){
+             Navigator.pushNamed(context, '/second',arguments: model);
+              },
+
+                child: Hero(
+                  tag: model.tag,
+                  child: Image.network(model.imgUrl,
+                   fit: BoxFit.cover,
+                  ),
+                ),
               ),
             ),
           ),

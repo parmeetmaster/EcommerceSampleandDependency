@@ -20,6 +20,21 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: Padding(
+        padding: EdgeInsets.only(bottom: 15),
+        child: Container(
+          width:MediaQuery.of(context).size.width*0.3,
+          height:MediaQuery.of(context).size.height*0.07,
+          child: RaisedButton(
+            color: projblack,
+            child: Icon(Icons.search,color:Colors.white),
+           shape: RoundedRectangleBorder(
+             borderRadius: BorderRadius.circular(30)
+           ),
+          ),
+        ),
+      ),
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         bottomOpacity: 0.0,
@@ -84,14 +99,22 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: [
                   RoundedCornerImages(
                     price: "28",
-                    title: "woolean coat",
+                    title: "Levis Top",
                     imageurl:
-                        "https://i.pinimg.com/originals/ca/76/0b/ca760b70976b52578da88e06973af542.jpg",
+                        "https://southcast.in/media/2018/08/actress-female-MUMBAI-modelling-models-photo-gallery.jpeg",
                   ),
                   RoundedCornerImages(
+                    price: "50",
+                    title: "Jacket",
                     imageurl:
-                        "https://i.pinimg.com/originals/ca/76/0b/ca760b70976b52578da88e06973af542.jpg",
-                  )
+                    "https://images.pexels.com/photos/1926769/pexels-photo-1926769.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                  ),
+                  RoundedCornerImages(
+                    price: "41",
+                    title: "woolean coat",
+                    imageurl:
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQv1PhaJ-GT_6JlDXzXFaTsdmEuxa86078Yjw&usqp=CAU",
+                  ),
                 ],
               ),
             ),
@@ -132,7 +155,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   _getCategory() {
-    final list = ["Coat", "Dresses", "jersy", "Pants"];
+    final list = ["Coat", "Dresses", "jersy", "Pants","Jersy","Shirts"];
     List<Widget> widgetlist = [];
     for (String text in list) {
       widgetlist.add(CategoryButton(

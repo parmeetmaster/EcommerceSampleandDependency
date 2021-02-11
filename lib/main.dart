@@ -5,13 +5,13 @@ import 'package:flutter_package_plugin1/flutter_package_plugin1.dart';
 import 'package:model_architecture/api/SampleCall.dart';
 import 'package:model_architecture/constantPackage/language/languageEn.dart';
 import 'package:model_architecture/providers/SampleProvider.dart';
-
-import 'package:model_architecture/screens/otpValidation/OtpValidation.dart';
 import 'package:model_architecture/utils/Globals.dart';
 import 'file:///D:/git%20main/flutter-modules/model_architecture/lib/api/api_service.dart';
 import 'package:model_architecture/utils/languageDeligate.dart';
 import 'package:provider/provider.dart';
 
+import 'providers/DetailsScreenProvider.dart';
+import 'screens/DetailScreen/DetailScreen.dart';
 import 'screens/HomeScreen/HomeScreen.dart';
 import 'utils/preference.dart';
 
@@ -22,13 +22,14 @@ void main() async {
   int k=Calculator().addOne(2);
   print("number is $k");
 
-  if (isPrimaryLanguageset() == false) {
+  if (isPrimaryLanguageset() ==  false) {
   } else {}
   Globals.primaryLanguage = await getPrimaryLanguage();
   runApp(
     MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (ctx) => SampleProvider()),
+        ChangeNotifierProvider(create: (ctx) => DetailScreenProvider()),
       ],
       child: MyApp(),
     ),
@@ -46,7 +47,7 @@ class MyApp extends StatelessWidget {
         // When navigating to the "/" route, build the FirstScreen widget.
         '/': (context) => HomeScreen(),
         // When navigating to the "/second" route, build the SecondScreen widget.
-        '/second': (context) => OtpValidation(),
+        '/second': (context) => DetailScreen(),
       },
       theme: ThemeData(
         // This is the theme of your application.

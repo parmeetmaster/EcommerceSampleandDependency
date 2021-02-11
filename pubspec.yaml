@@ -41,10 +41,12 @@ dependencies:
   #update as per need
   shared_preferences:
   provider: ^4.3.3
+  uuid: 2.2.2
+  carousel_slider: ^3.0.0
+  dots_indicator: ^1.2.0
   change_app_package_name: ^0.1.2
   google_fonts:
   dio:
-  google_pay: ^0.0.1
   stripe_payment: ^1.0.10
   logger:
   flutter_swiper:
