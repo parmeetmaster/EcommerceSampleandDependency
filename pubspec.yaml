@@ -51,6 +51,7 @@ dependencies:
   logger:
   flutter_swiper:
   auto_route:
+  assorted_layout_widgets: ^3.0.1
 dev_dependencies:
   flutter_test:
     sdk: flutter
