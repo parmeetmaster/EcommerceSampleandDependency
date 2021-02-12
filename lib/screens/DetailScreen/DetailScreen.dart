@@ -3,6 +3,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:model_architecture/Globals/Widgets/shoppingcart.dart';
 import 'package:model_architecture/constantPackage/constColors.dart';
 import 'package:model_architecture/model/DetailScreenModel.dart';
 import 'package:model_architecture/providers/DetailsScreenProvider.dart';
@@ -170,19 +171,22 @@ class _DetailScreenState extends State<DetailScreen> {
                             width: MediaQuery.of(context).size.width,
                             child: ColumnSuper(
                               children: [
-                                Container(
-                                  height: 60,
-                                  width: 350,
-                                  decoration: BoxDecoration(
-                                      color: projblack,
-                                      borderRadius: BorderRadius.all(
-                                          Radius.circular(30))),
-                                  child: Center(
-                                      child: Text("Add to Cart",
-                                          style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 18,
-                                              fontWeight: FontWeight.w800))),
+                                InkWell(
+                                  onTap: provider.addItemCart,
+                                  child: Container(
+                                    height: 60,
+                                    width: 350,
+                                    decoration: BoxDecoration(
+                                        color: projblack,
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(30))),
+                                    child: Center(
+                                        child: Text("Add to Cart",
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 18,
+                                                fontWeight: FontWeight.w800))),
+                                  ),
                                 ),
                                 SizedBox(height: 30),
                                 Padding(
@@ -233,22 +237,33 @@ class _DetailScreenState extends State<DetailScreen> {
                                     ],
                                   ),
                                 ),
-                                  Padding(
-                                    padding: const EdgeInsets.symmetric(horizontal:20),
-                                    child: Container(height:160,
-                                      child: SingleChildScrollView(
-                                          scrollDirection:Axis.vertical,
-                                          child: Text(
-                                              "So how did the classical Latin become so "
-                                                  "incoherent? According to McClintock, a 15th century typesetter likely"
-                                                  " scrambled part of Cicero's De Finibus in order to provide placeholder text"
-                                                  " to mockup various fonts for a type specimen book.Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatemNeque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatemNeque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatemNeque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatemNeque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatemNeque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatemNeque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore etNeque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem dolore magnam aliquam quaerat voluptatem"),
-                                        ),
+                                Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 20),
+                                  child: Container(
+                                    height: 411,
+                                    child: SingleChildScrollView(
+                                      scrollDirection: Axis.vertical,
+                                      child: Text(
+                                          "So how did the classical Latin become so "
+                                          "incoherent? According to McClintock, a 15th century typesetter likely"
+                                          " scrambled part of Cicero's De Finibus in order to provide placeholder text"
+                                          " to mockup various fonts for a type specimen book.Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatemNeque"
+                                          " porro quisquam est, qui dolorem ipsum quia dolor sit amet,"
+                                          " consectetur, adipisci velit, sed quia non numquam eius"
+                                          " modi tempora incidunt ut labore et dolore magnam aliquam "
+                                          "quaerat voluptatemNeque porro quisquam est, qui dolorem "
+                                          "ipsum quia dolor sit amet, consectetur, adipisci velit,"
+                                          " sed quia non numquam eius modi tempora incidunt ut labore "
+                                          "et dolore magnam aliquam quaerat voluptatemNeque porro quisquam est, "
+                                          "qui dolorem ipsum quia dolor sit amet, consectetur,"
+                                          " adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore"
+                                          " et dolore magnam aliquam q  uaerat voluptatemNeque porro quisquam est,"
+                                          " qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed "
+                                          "quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatemNeque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatemNeque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore etNeque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem dolore magnam aliquam quaerat voluptatem"),
                                     ),
-                                  )
-
-
-
+                                  ),
+                                )
                               ],
                             ),
                           ),
@@ -258,7 +273,21 @@ class _DetailScreenState extends State<DetailScreen> {
               ),
             ),
           ],
-        )
+        ),
+        Positioned(
+            top: 50,
+           right:25,
+            child: ShoppingCart(count:provider.cartcount,controller:provider.controller)),
+        Positioned(
+            top: 50,
+            left:25,
+            child: InkWell(
+                onTap: (){
+                  Navigator.pop(context);
+                },
+                child: Icon(Icons.arrow_back,color: projblack,)))
+
+
       ]);
     }));
   }

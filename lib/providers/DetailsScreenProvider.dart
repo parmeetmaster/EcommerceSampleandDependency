@@ -1,6 +1,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:model_architecture/Globals/Widgets/shoppingcart.dart';
 import 'package:model_architecture/screens/DetailScreen/Components/curverdBox.dart';
 import 'package:model_architecture/screens/DetailScreen/Components/roundedCircle.dart';
 
@@ -11,8 +12,9 @@ class DetailScreenProvider extends ChangeNotifier{
   List<Widget> colorWidgets;
   List<String> productSizes=["S","M","L","XL"];
   List<Widget> product_size_list;
-
+  ShoppingController controller=new ShoppingController();
   var price="\$ 80";
+  int cartcount=0;
 
   generateColorCircles()async {
     colorWidgets=[];
@@ -103,4 +105,9 @@ changeActiveBox(String item){
   }
   notifyListeners();
 }
+
+  void addItemCart() {
+    cartcount+=1;
+    controller.changeCount(cartcount);
+  }
 }
