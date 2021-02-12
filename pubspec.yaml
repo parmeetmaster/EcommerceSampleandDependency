@@ -50,6 +50,7 @@ dependencies:
   stripe_payment: ^1.0.10
   logger:
   flutter_swiper:
+  rename: ^1.2.0
   auto_route:
   assorted_layout_widgets: ^3.0.1
 dev_dependencies:
