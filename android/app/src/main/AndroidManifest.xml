@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.aphalia.model_architecture">
+    package="com.practice.Ecommerce">
    <application
         android:label="model_architecture"
         android:icon="@mipmap/ic_launcher">
