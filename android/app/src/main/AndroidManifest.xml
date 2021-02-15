@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.practice.Ecommerce">
    <application
-        android:label="Ecommerce Practice"
+        android:label="Saudi Demo"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

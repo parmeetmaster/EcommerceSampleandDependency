@@ -19,6 +19,7 @@ import 'utils/preference.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Preference.load();
+  setPrimaryLanguage(languageEnum.english);
   int k=Calculator().addOne(2);
   print("number is $k");
 
